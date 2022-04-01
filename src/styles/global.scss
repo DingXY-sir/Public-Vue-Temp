@@ -1,0 +1,24 @@
+@import "./global_color.scss";
+// 定义全局样式
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+#app {
+  height: 100%;
+}
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+div:focus {
+  outline: none;
+}
+
+label {
+  font-weight: 700;
+}
