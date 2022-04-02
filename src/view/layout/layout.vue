@@ -1,6 +1,14 @@
 <template>
   <div class="layout-container">
-    <div class="layout-header"><p>你好，vue3+TS！</p></div>
+    <el-container>
+      <el-aside width="200px">
+        <p class="menu-color">你好</p>
+      </el-aside>
+      <el-container>
+        <el-header>Header</el-header>
+        <el-main>Main</el-main>
+      </el-container>
+    </el-container>
   </div>
 </template>
 
@@ -8,10 +16,8 @@
 import { ref, reactive, computed, watch } from "vue";
 </script>
 <style lang="scss" scoped>
-.layout-header {
-  p {
-    font-size: 40px;
-    color: red;
-  }
+.menu-color {
+  color: $menuColor;
+  font-size: $menuFont;
 }
 </style>
