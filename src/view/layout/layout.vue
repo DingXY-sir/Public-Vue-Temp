@@ -1,23 +1,27 @@
 <template>
   <div class="layout-container">
     <el-container>
-      <el-aside width="200px">
-        <p class="menu-color">你好</p>
+      <el-aside class="aside-container">
+        <logo />
+        <menu-nav />
       </el-aside>
       <el-container>
-        <el-header>Header</el-header>
-        <el-main>Main</el-main>
+        <el-header class="header-container">Header</el-header>
+        <el-main class="main-container">Main</el-main>
       </el-container>
     </el-container>
   </div>
 </template>
 
 <script setup lang="ts">
+import Logo from "./components/logo.vue";
+import MenuNav from "./components/menu.vue";
 import { ref, reactive, computed, watch } from "vue";
 </script>
 <style lang="scss" scoped>
-.menu-color {
-  color: $menuColor;
-  font-size: $menuFont;
+.aside-container {
+  width: 200px;
+  height: 100vh;
+  background-color: $menuBg;
 }
 </style>
