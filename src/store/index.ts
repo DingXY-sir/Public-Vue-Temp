@@ -1,5 +1,6 @@
 
 import { createStore } from 'vuex'
+import tab from './module/tab'
 
 const store = createStore({
   state() {
@@ -9,6 +10,9 @@ const store = createStore({
   },
   mutations: {
     
+  },
+  modules: {
+    tab
   }
 })
 

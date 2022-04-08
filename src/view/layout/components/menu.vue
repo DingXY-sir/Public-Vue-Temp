@@ -15,6 +15,7 @@
     @open="handleOpen"
     @close="handleClose"
   >
+    <logo />
     <el-menu-item index="4">
       <el-icon><setting /></el-icon>
       <template #title>Navigator Four</template>
@@ -49,28 +50,37 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from "vue";
+import Logo from "./logo.vue";
+import { ref, computed } from "vue";
+import { useStore } from "vuex";
 import {
   Document,
   Menu as IconMenu,
   Location,
   Setting,
 } from "@element-plus/icons-vue";
-
-const isCollapse = ref(false);
+const store = useStore();
+// const isCollapse = ref(false);
 const handleOpen = (key: string, keyPath: string[]) => {
   console.log(key, keyPath);
 };
 const handleClose = (key: string, keyPath: string[]) => {
   console.log(key, keyPath);
 };
+//计算属性
+const isCollapse = computed(() => {
+  return store.state.tab.isCollapse;
+});
 </script>
 
 <style scoped lang="scss">
 .el-menu-vertical-demo:not(.el-menu--collapse) {
   width: 200px;
-  height: calc(100vh - 65px);
+  height: 100vh;
   border: none;
+}
+.el-menu--collapse {
+  height: 100vh;
 }
 .el-menu-item:hover {
   outline: 0 !important;

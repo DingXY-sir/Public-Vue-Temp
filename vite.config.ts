@@ -44,6 +44,6 @@ export default defineConfig({
       extensions: ['vue'],
       // 配置文件生成位置
       dts: 'src/components.d.ts'
-    })
+    }),
   ]
 })

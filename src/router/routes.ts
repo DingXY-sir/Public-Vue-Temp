@@ -4,6 +4,10 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: "/",
     name: "Layout",
+    meta: {
+      title: '首页',
+      isNoLogin:true
+    },
     component:() => import('@/view/layout/layout.vue')
   },
   {
