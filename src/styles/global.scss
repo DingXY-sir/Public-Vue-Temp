@@ -1,2 +1,7 @@
 @import "./global_color.scss";
 // 定义全局样式
+._flex{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

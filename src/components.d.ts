@@ -17,6 +17,7 @@ declare module 'vue' {
     ElSelect: typeof import('element-plus/es')['ElSelect']
     ElSubMenu: typeof import('element-plus/es')['ElSubMenu']
     HelloWorld: typeof import('./components/HelloWorld.vue')['default']
+    LangSwitch: typeof import('./components/LangSwitch/index.vue')['default']
     Setting: typeof import('./components/Setting/index.vue')['default']
   }
 }
