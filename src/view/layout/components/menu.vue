@@ -11,6 +11,7 @@
     text-color="#fff"
     active-text-color="#4091f7"
     router
+    :mode="modeStyle === 'horizontal' ? 'horizontal' : 'vertical'"
     collapse-transition
     @open="handleOpen"
     @close="handleClose"
@@ -18,12 +19,12 @@
     <logo />
     <el-menu-item index="4">
       <el-icon><setting /></el-icon>
-      <template #title>Navigator Four</template>
+      <template #title>首页</template>
     </el-menu-item>
     <el-sub-menu index="1">
       <template #title>
         <el-icon><location /></el-icon>
-        <span>Navigator One</span>
+        <span>设置</span>
       </template>
       <!-- <el-menu-item-group>
         <template #title><span>Group One</span></template>
@@ -34,17 +35,17 @@
         <el-menu-item index="1-3">item three</el-menu-item>
       </el-menu-item-group> -->
       <el-sub-menu index="1-4">
-        <template #title><span>item four</span></template>
-        <el-menu-item index="1-4-1">item one</el-menu-item>
+        <template #title><span>菜单</span></template>
+        <el-menu-item index="1-4-1">路由</el-menu-item>
       </el-sub-menu>
     </el-sub-menu>
     <el-menu-item index="2">
       <el-icon><icon-menu /></el-icon>
-      <template #title>Navigator Two</template>
+      <template #title>功能</template>
     </el-menu-item>
     <el-menu-item index="3" disabled>
       <el-icon><document /></el-icon>
-      <template #title>Navigator Three</template>
+      <template #title>关于</template>
     </el-menu-item>
   </el-menu>
 </template>
@@ -71,6 +72,10 @@ const handleClose = (key: string, keyPath: string[]) => {
 const isCollapse = computed(() => {
   return store.state.tab.isCollapse;
 });
+
+const modeStyle = computed(() => {
+  return store.state.tab.modeStyle;
+});
 </script>
 
 <style scoped lang="scss">
@@ -79,6 +84,7 @@ const isCollapse = computed(() => {
   height: 100vh;
   border: none;
 }
+
 .el-menu--collapse {
   height: 100vh;
 }
